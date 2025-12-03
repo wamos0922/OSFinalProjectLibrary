@@ -79,6 +79,36 @@ def apply_pastel_matte(img: Image.Image) -> Image.Image:
     return img
 
 # --- MANUAL EDIT SEQUENCE ---
+def process_manual_edits(
+    img: Image.Image, 
+    saturation_factor: float, 
+    shadows_amount: float, 
+    brightness_factor: float, 
+    sharpness_factor: float
+) -> Generator[Tuple[str, Image.Image], None, None]:
+    """
+    Applies the four manual edits sequentially and yields the image 
+    after each step, plus the name of the feature just applied.
+    
+    The generator yields: (feature_name, image_object)
+    """
+    current_img = img.copy()
+
+    # 1. SATURATION
+    current_img = adjust_saturation(current_img, saturation_factor)
+    yield ("saturation", current_img)
+
+    # 2. SHADOWS
+    current_img = adjust_shadows(current_img, shadows_amount)
+    yield ("shadows", current_img)
+
+    # 3. BRIGHTNESS
+    current_img = adjust_brightness(current_img, brightness_factor)
+    yield ("brightness", current_img)
+
+    # 4. SHARPNESS
+    current_img = adjust_sharpness(current_img, sharpness_factor)
+    yield ("sharpness", current_img)
 
 
     
