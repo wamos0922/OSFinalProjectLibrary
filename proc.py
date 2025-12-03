@@ -1,0 +1,40 @@
+# Import Files
+
+
+# General Utility
+
+
+
+# --- FEATURE IMPLEMENTATION ---
+
+# 1. BRIGHTNESS
+
+
+
+# 2. SATURATION
+
+
+
+
+# 3. SHARPNESS
+
+
+
+
+# 4. SHADOWS
+
+
+
+
+# --- TEMPLATE FUNCTIONS ---
+
+# 1. GOLDEN HOUR TEMPLATE
+
+# 2. GRITTY CONTRAST TEMPLATE
+
+# 3. PASTEL MATTE TEMPLATE
+
+# --- MANUAL EDIT SEQUENCE ---
+
+
+    
