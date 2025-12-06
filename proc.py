@@ -82,7 +82,16 @@ def adjust_shadows(img: Image.Image, amount: float) -> Image.Image:
 # --- TEMPLATE FUNCTIONS ---
 
 # 1. GOLDEN HOUR TEMPLATE
-
+def apply_golden_hour(img: Image.Image) -> Image.Image:
+    """
+    Applies a warm, soft 'Golden Hour' look.
+    Uses Saturation to boost warm colors, Brightness for overall glow.
+    """
+    img = adjust_saturation(img, 1.30) 
+    img = adjust_shadows(img, 0.30)
+    img = adjust_brightness(img, 1.15)
+    img = adjust_sharpness(img, 0.80)
+    return img
 # 2. GRITTY CONTRAST TEMPLATE
 def apply_gritty_contrast(img: Image.Image) -> Image.Image:
     """
